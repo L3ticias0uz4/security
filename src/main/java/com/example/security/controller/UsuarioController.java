@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 
-@RestController("users")
+@RestController
 public class UsuarioController {
 
     private final UsuarioService usuarioService;
@@ -19,7 +19,7 @@ public class UsuarioController {
     }
 
 
-    @PostMapping("create")
+    @PostMapping("/users")
     public ResponseEntity<?> criarUsuario(@RequestBody UsuarioRequestDTO dto){
         return ResponseEntity.ok(usuarioService.criarUsuario(dto));
     }
